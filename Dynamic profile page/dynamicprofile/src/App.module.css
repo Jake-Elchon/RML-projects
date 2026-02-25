@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap");
+
+:root {
+  --coverPage-color: #0029ff;
+  --supportingText-color: #d8d8d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+h1 {
+  color: var(--coverPage-color);
+}
+h2 {
+  color: var(--supportingText-color);
+}
+
+.cardContainer {
+  height: 600px;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__container__coverPage {
+  height: 200px;
+  width: 100%;
+  background-color: var(--coverPage-color);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+
+  position: relative;
+  anchor-name: --coverPage;
+}
+
+.imageContainer > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.imageContainer {
+  position: absolute;
+  position-area: end span-all;
+  position-anchor: --coverPage;
+
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -75px;
+  border: 5px solid #fff;
+}
+
+.card__container__userInfo {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+input {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  height: 50px;
+  padding-left: 2em;
+  font-size: 1.2em;
+  border: none;
+}
+input:hover {
+  outline-color: var(--coverPage-color);
+}
