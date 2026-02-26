@@ -1,0 +1,179 @@
+:root {
+  --header-color: #1c1c24;
+  --support-text-color: #f26522;
+  --grey-text-color: #9ba4a7;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: 110vh;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 3em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--grey-text-color);
+}
+
+button {
+  padding: 2em;
+}
+
+
+
+[class*="imageContainer"] > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#back__section {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 110vh;
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  background-color: var(--header-color);
+}
+
+#back__section__left {
+  background-color: var(--header-color);
+}
+.back__section__right {
+  height: 95%;
+  background-image: url("../../assets/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(60%);
+  position: relative;
+  anchor-name: --right-section;
+}
+
+.back__section__right_imageContainer {
+  position: absolute;
+  width: 550px;
+  height: 80%;
+  position-anchor: --right-section;
+  position-area: left;
+  margin-right: -250px;
+  margin-bottom: -15%;
+}
+
+#front__section {
+  position: absolute;
+  inset: 0;
+  padding: 3em 10em 0em;
+  height: 110vh;
+  z-index: 1;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#left__navigation {
+  width: 43%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+#left__navigation .imageContainer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  margin-right: auto;
+}
+
+#left__navigation__links > li:first-child > a {
+  color: white;
+}
+#left__navigation__links > li > a {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#right__navigation {
+  height: inherit;
+}
+
+#right__navigation > li {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+
+#header__info {
+  height: 70%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 2em;
+}
+
+#header__info h1 {
+  font-size: 80px;
+  color: white;
+  width: 100%;
+  position: relative;
+}
+#header__info h1::before {
+  position: absolute;
+  content: "";
+  width: 13%;
+  height: 2px;
+  top: -15px;
+  background-color: var(--support-text-color);
+}
+
+#header__info_ActionButtons {
+  height: 80px;
+  width: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+#more__about_me {
+  width: 60%;
+  height: inherit;
+  background: none;
+  border: 3px solid white;
+  color: white;
+  letter-spacing: 1px;
+  font-size: large;
+  display: grid;
+  place-content: center;
+}
+
+#play {
+  max-height: inherit;
+  border-radius: 50%;
+  border: 3px solid white;
+  background: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
