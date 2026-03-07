@@ -1,0 +1,296 @@
+@import url('https://googleapis.com');
+
+:root {
+    --left-section-top-color: #EEE7FF;
+    --highlight-color: #E13E4F;
+    --right-section-right-color: #EFFFFF;
+    --progress-background-color: #E9E9E9;
+
+}
+
+[class*="imageContainer"] > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+#pageContainer2 {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 1em;
+}
+
+#left__section2 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, white, var(--left-section-top-color));
+    display: flex;
+    flex-direction: column;
+    padding: 4em 2em;
+    justify-content: space-between;
+    border-radius: 2em;
+    position: relative;
+    box-shadow: 5px 2px 10px -1px grey;
+}
+
+#left__section2::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -1%;
+    left: -5%;
+    transform: rotateZ(-2deg);
+    border-radius: inherit;
+    z-index: -999;
+    background-color: var(--highlight-color);
+}
+
+#progress__section2 {
+    height: 70%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+#progress__section2 > .progress__information {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+#progress__section2 > .progress__information:nth-child(2) >  .progress__information__imageContainer  {
+    border-color: var(--highlight-color);
+}
+
+#progress__section2 > .progress__information > .progress__information__imageContainer {
+    height: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    padding: 0.5em;
+    border: 5px solid white;
+}
+
+#progress__section2 > .progress__information > .progress__information__imageContainer > .progress__information__imageContainer__number {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 30%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    background-color: white;
+}
+
+#progress__section2 > .progress__information > .progress__information__imageContainer > .progress__information__imageContainer__number * {
+    width: 30px;
+    height: 30px;
+    background-color: var(--progress-background-color);
+    border-radius: inherit;
+    display: grid;
+    place-content: center;
+}
+
+#progress__section2 > .progress__information > .progress__information__detial {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2em;
+    position: relative;
+}
+
+#progress__section2 > .progress__information:nth-child(2) > .progress__information__detial > h3  {
+    text-transform: uppercase;
+    color: var(--highlight-color)
+}
+
+#progress__section2 > .progress__information > .progress__information__detial > p {
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+#progress__section2 > .progress__information > .progress__information__detial > .progress__information__highlighter {
+    position: absolute;
+    width: 80%;
+    height: 4px;
+    background-color: black;
+    border-radius: 2em;
+    right: -80%;
+    top: 50%;
+    z-index: 2;
+}
+
+
+#progress__indication2 {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#progress__indication2 > h3{
+    font-weight: 100;
+}
+
+#progress__bar2 {
+    height: 50%;
+    width: 100%;
+    border-radius: 2em;
+    background-color: var(--left-section-top-color);
+}
+
+#progress2 {
+    height: 100%;
+    width: 66.9%;
+    background-color: var(--highlight-color);
+    border-radius: inherit;
+}
+
+#right__section2 {
+    padding: 4em 2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px 100px 1fr 50px;
+    gap: 3em;
+    background: linear-gradient(to right, white, var(--right-section-right-color));
+    border-radius: 2em;
+    position: relative;
+}
+
+#right__section2::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--highlight-color);
+    border-radius: inherit;
+    z-index: -999;
+    right: -3%;
+    bottom: -3%;
+    transform: rotateZ(3deg);
+}
+
+#right__section2 > *:not(:nth-child(3)) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#right__section2 > *:first-child {
+    justify-self: flex-end;
+}
+
+#right__section2 > *:nth-child(2) > h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+#right__section2 > *:nth-child(2) > p {
+    font-size: 20px;
+    color: grey;
+}
+
+#choice__container2 {
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    gap: 4em;
+}
+
+#choice__container2 > div {
+    position: relative;
+    background: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#choice__container2 > div:first-child:hover::before {
+    position: absolute;
+    content: 'First Name';
+    width: 20%;
+    height: 50px;
+    background-color: var(--highlight-color);
+    top: -25%;
+    left: 3%;
+    color: white;
+    display: grid;
+    place-content: center;
+    font-size: 1.5em;
+}
+
+#choice__container2 > div:nth-child(2):hover::before {
+    position: absolute;
+    content: 'Second Name';
+    width: 20%;
+    height: 50px;
+    background-color: var(--highlight-color);
+    top: -25%;
+    left: 3%;
+    color: white;
+    display: grid;
+    place-content: center;
+    font-size: 1.5em;
+}
+
+#choice__container2 > div:last-child:hover::before {
+    position: absolute;
+    content: 'Email';
+    width: 20%;
+    height: 50px;
+    background-color: var(--highlight-color);
+    top: -25%;
+    left: 3%;
+    color: white;
+    display: grid;
+    place-content: center;
+    font-size: 1.5em;
+}
+
+
+#choice__container2 > div > input {
+    width: 100%;
+    height: 100px;
+    padding: 2em;
+    border: 3px solid grey;
+    font-size: 1.5em;
+}
+
+[id*="button"] {
+    height: in;
+    width: 200px;
+    justify-self: flex-end;
+    font-size: 1.5em;
+    border: none;
+    background-color: var(--highlight-color);
+    color: white;
+    border-radius: 2em;
+}
+
+#back__button {}
+
+#next__button2 {
+    display: inline;
+    width: 200px;
+    height: 48px;
+    font-size: 1.5em;
+    border: none;
+    color: white;
+    border-radius: 2em;
+}
+
+

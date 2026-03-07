@@ -1,0 +1,267 @@
+@import url('https://googleapis.com');
+
+:root {
+    --left-section-top-color: #EEE7FF;
+    --highlight-color: #E13E4F;
+    --right-section-right-color: #EFFFFF;
+    --progress-background-color: #E9E9E9;
+
+}
+
+[class*="imageContainer"] > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+#pageContainer {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 1em;
+}
+
+#left__section {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, white, var(--left-section-top-color));
+    display: flex;
+    flex-direction: column;
+    padding: 4em 2em;
+    justify-content: space-between;
+    border-radius: 2em;
+    position: relative;
+    box-shadow: 5px 2px 10px -1px grey;
+}
+
+#left__section::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -1%;
+    left: -5%;
+    transform: rotateZ(-2deg);
+    border-radius: inherit;
+    z-index: -999;
+    background-color: var(--highlight-color);
+}
+
+#progress__section {
+    height: 70%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+#progress__section > .progress__information {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+#progress__section > .progress__information:first-child >  .progress__information__imageContainer  {
+    border-color: var(--highlight-color);
+}
+
+#progress__section > .progress__information > .progress__information__imageContainer {
+    height: 70%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    padding: 0.5em;
+    border: 5px solid white;
+}
+
+#progress__section > .progress__information > .progress__information__imageContainer > .progress__information__imageContainer__number {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 30%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    background-color: white;
+}
+
+#progress__section > .progress__information > .progress__information__imageContainer > .progress__information__imageContainer__number * {
+    width: 30px;
+    height: 30px;
+    background-color: var(--progress-background-color);
+    border-radius: inherit;
+    display: grid;
+    place-content: center;
+}
+
+#progress__section > .progress__information > .progress__information__detial {
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2em;
+    position: relative;
+}
+
+#progress__section > .progress__information:first-child > .progress__information__detial > h3  {
+    text-transform: uppercase;
+    color: var(--highlight-color)
+}
+
+#progress__section > .progress__information > .progress__information__detial > p {
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+#progress__section > .progress__information > .progress__information__detial > .progress__information__highlighter {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 2em;
+    right: -100%;
+    top: 50%;
+    z-index: 2;
+}
+
+
+#progress__indication {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#progress__indication > h3{
+    font-weight: 100;
+}
+
+#progress__bar {
+    height: 50%;
+    width: 100%;
+    border-radius: 2em;
+    background-color: var(--left-section-top-color);
+}
+
+#progress {
+    height: 100%;
+    width: 33.3%;
+    background-color: var(--highlight-color);
+    border-radius: inherit;
+}
+
+#right__section {
+    padding: 4em 2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px 100px 1fr 50px;
+    gap: 3em;
+    background: linear-gradient(to right, white, var(--right-section-right-color));
+    border-radius: 2em;
+    position: relative;
+}
+
+#right__section::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--highlight-color);
+    border-radius: inherit;
+    z-index: -999;
+    right: -3%;
+    bottom: -3%;
+    transform: rotateZ(3deg);
+}
+
+#right__section > *:not(:nth-child(3)) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#right__section > *:first-child {
+    justify-self: flex-end;
+}
+
+#right__section > *:nth-child(2) > h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+#right__section > *:nth-child(2) > p {
+    font-size: 20px;
+    color: grey;
+}
+
+#choice__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1em;
+}
+
+#choice__container > .choice {
+    background: none;
+    border-radius: 2em;;
+    border: 3px solid grey;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    gap: 1em;
+}
+
+#choice__container > .choice:has(input[className="checkbox__decision"]):checked {
+    border-color: var(--highlight-color);
+}
+
+#choice__container > .choice > .choice__imageContainer {
+    width: 70%;
+    aspect-ratio: 1;
+    background-color: orange;
+    border-radius: 50%;
+    margin: auto;
+}
+
+#choice__container > .choice > h3 {
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#choice__container > .choice > p {
+    color: grey;
+}
+
+#choice__container > .choice > input.checkbox__decision {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform: scale(3);
+}
+
+
+#next__button {
+    width: 200px;
+    justify-self: flex-end;
+    font-size: 1.5em;
+    border: none;
+    background-color: var(--highlight-color);
+    color: white;
+    border-radius: 2em;
+}
+
+

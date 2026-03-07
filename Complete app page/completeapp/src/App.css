@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 115vh;
+    width: 100%;
+    padding: 4em;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F7FB;
+}
+
